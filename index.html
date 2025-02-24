@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #ffcc00; /* Sunny yellow */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff9900; /* Darker yellow */
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #ff4500; /* Pirate red */
+            background-color: #fff;
+            border-radius: 8px;
+            max-width: 400px;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .fact-display.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="showFactButton">Show Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            "Anime originated in Japan and has become a global phenomenon.",
+            "The word 'anime' is derived from the English word 'animation'.",
+            "The first anime ever created is considered to be 'Namakura Gatana' from 1917.",
+            "Studio Ghibli's 'Spirited Away' won an Academy Award for Best Animated Feature in 2003.",
+            "The longest-running anime series is 'Sazae-san', which started in 1969 and is still ongoing.",
+            "Anime covers a wide range of genres, including action, romance, horror, and science fiction.",
+            "The anime 'One Piece' holds the Guinness World Record for the most copies published for the same comic book series by a single author.",
+            "Anime often features exaggerated facial expressions to convey emotions.",
+            "Many anime series are based on manga, which are Japanese comic books or graphic novels.",
+            "Anime conventions, such as Anime Expo and Comic-Con, attract thousands of fans worldwide."
+        ];
+
+        document.getElementById('showFactButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.textContent = facts[randomIndex];
+            factDisplay.classList.add('show');
+        });
+    </script>
+</body>
+</html>
