@@ -7,17 +7,23 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Light blue background */
+            background-image: url('https://img.freepik.com/free-photo/coast-landscape-digital-art_23-2151575965.jpg?t=st=1740635101~exp=1740638701~hmac=8ef7df5119ad25e1f93c8a97d3ad55f06f8bbf2185deea8a1fae994d872ba488&w=1480'); /* Add your One Piece background image path */
+            background-size: cover;
+            background-position: center;
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
 
         .container {
             text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
         }
 
         button {
@@ -27,11 +33,12 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         button:hover {
             background-color: #ff9900; /* Darker yellow */
+            transform: scale(1.1);
         }
 
         .fact-display {
@@ -59,16 +66,26 @@
     </div>
     <script>
         const facts = [
-            "Anime originated in Japan and has become a global phenomenon.",
-            "The word 'anime' is derived from the English word 'animation'.",
-            "The first anime ever created is considered to be 'Namakura Gatana' from 1917.",
-            "Studio Ghibli's 'Spirited Away' won an Academy Award for Best Animated Feature in 2003.",
-            "The longest-running anime series is 'Sazae-san', which started in 1969 and is still ongoing.",
-            "Anime covers a wide range of genres, including action, romance, horror, and science fiction.",
-            "The anime 'One Piece' holds the Guinness World Record for the most copies published for the same comic book series by a single author.",
-            "Anime often features exaggerated facial expressions to convey emotions.",
-            "Many anime series are based on manga, which are Japanese comic books or graphic novels.",
-            "Anime conventions, such as Anime Expo and Comic-Con, attract thousands of fans worldwide."
+            "Attack on Titan is known for its intense action and complex storyline.",
+            "Naruto follows the journey of a young ninja seeking recognition.",
+            "Dragon Ball Z is famous for its epic battles and powerful transformations.",
+            "Death Note explores the psychological battle between a detective and a vigilante.",
+            "My Hero Academia is set in a world where most people have superpowers.",
+            "Fullmetal Alchemist: Brotherhood is praised for its storytelling and character development.",
+            "Demon Slayer became a cultural phenomenon with its stunning animation.",
+            "Sword Art Online explores virtual reality worlds and their consequences.",
+            "One Punch Man is a parody of superhero genres with a powerful protagonist.",
+            "Tokyo Ghoul delves into the life of a half-ghoul, half-human protagonist.",
+            "Neon Genesis Evangelion is a classic mecha anime with deep philosophical themes.",
+            "Cowboy Bebop is a space western known for its music and style.",
+            "Spirited Away is a Studio Ghibli masterpiece that won an Academy Award.",
+            "One Piece follows the adventures of pirates searching for the ultimate treasure.",
+            "Bleach features a teenager who becomes a Soul Reaper to protect the living world.",
+            "Hunter x Hunter is known for its intricate plot and character development.",
+            "Fairy Tail is about a guild of wizards and their adventures.",
+            "JoJo's Bizarre Adventure is famous for its unique art style and storytelling.",
+            "Black Clover follows a boy without magic in a world where magic is everything.",
+            "Re:Zero explores the concept of time loops and alternate realities."
         ];
 
         document.getElementById('showFactButton').addEventListener('click', () => {
