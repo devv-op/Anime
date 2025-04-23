@@ -1,2 +1,2 @@
-# genai101-dev
-GenAI
+# Anime-dev
+Anime-Facts
