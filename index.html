@@ -12,11 +12,18 @@
             color: #333;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end; /* Align items to the bottom */
             height: 100vh;
             margin: 0;
             overflow: hidden;
             transition: background-image 0.5s ease;
+            animation: backgroundAnimation 5s infinite alternate; /* Initial animation */
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-color: #ffcc00; }
+            50% { background-color: #ff9900; }
+            100% { background-color: #ffcc00; }
         }
 
         .container {
@@ -24,6 +31,7 @@
             background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
             padding: 20px;
             border-radius: 10px;
+            margin-bottom: 20px; /* Add margin to position above the bottom */
         }
 
         button {
@@ -68,7 +76,7 @@
         const facts = [
             { text: "Attack on Titan is known for its intense action and complex storyline.", background: 'https://wallpapercave.com/wp/wp5641024.jpg' },
             { text: "Naruto follows the journey of a young ninja seeking recognition.", background: 'https://wallpaper.forfun.com/fetch/85/85cef4328a25bf4d6311c54dc1ab586d.jpeg?w=1200&r=0.5625' },
-            { text: "Dragon Ball Z is famous for its epic battles and powerful transformations.", background: 'https://wallpapercave.com/wp/wp1865972.jpg' },
+            { text: "Dragon Ball Z is famous for its epic battles and powerful transformations.", background: 'https://4kwallpapers.com/images/walls/thumbs_3t/17603.jpg' },
             { text: "Death Note explores the psychological battle between a detective and a vigilante.", background: 'https://images6.alphacoders.com/332/thumb-1920-332761.jpg' },
             { text: "My Hero Academia is set in a world where most people have superpowers.", background: 'https://images4.alphacoders.com/809/thumb-1920-809306.png' },
             { text: "Fullmetal Alchemist: Brotherhood is praised for its storytelling and character development.", background: 'https://images5.alphacoders.com/462/thumb-1920-462365.jpg' },
@@ -85,7 +93,6 @@
             { text: "Chainsaw Man delves into a brutal world where devils and humans clash for survival.", background: 'https://images6.alphacoders.com/134/thumb-1920-1345660.png' },
             { text: "Vinland Saga portrays the Viking era, focusing on war, revenge, and the search for a true purpose.", background: 'https://images7.alphacoders.com/130/thumb-1920-1304281.png' },            
             { text: "Jujutsu Kaisen explores a world where sorcerers battle cursed spirits using powerful techniques.", background: 'https://images5.alphacoders.com/135/thumb-1920-1350412.png' }
-
         ];
 
         document.getElementById('showFactButton').addEventListener('click', () => {
@@ -95,6 +102,7 @@
             factDisplay.textContent = selectedFact.text;
             factDisplay.classList.add('show');
             document.body.style.backgroundImage = `url('${selectedFact.background}')`;
+            document.body.style.animation = 'none'; // Stop the initial animation
         });
     </script>
 </body>
